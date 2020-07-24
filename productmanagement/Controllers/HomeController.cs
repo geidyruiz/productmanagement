@@ -10,6 +10,7 @@ using productmanagement.Models;
 
 namespace productmanagement.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,7 +25,7 @@ namespace productmanagement.Controllers
             return View();
         }
 
-       // [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult Privacy()
         {
             return View();

@@ -9,6 +9,8 @@ using productmanagement.Models.ViewModels;
 
 namespace productmanagement.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -25,7 +27,7 @@ namespace productmanagement.Controllers
         }
 
         [HttpGet]
-       // [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult CreateRole()
         {
             return View();
@@ -59,7 +61,7 @@ namespace productmanagement.Controllers
 
         [HttpGet]
 
-      //  [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public IActionResult ListRoles()
         {
             var roles = roleManager.Roles;
@@ -68,6 +70,7 @@ namespace productmanagement.Controllers
         }
 
         [HttpGet]
+
         public async Task<IActionResult> EditRole(string id)
         {
             var role = await roleManager.FindByIdAsync(id);
