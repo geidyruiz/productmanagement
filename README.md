@@ -8,6 +8,18 @@ the first view allows users to create their products and create an order based o
 
 Database includes 3 core tables and 6 additional tables that manages all the role functions.
 
+Normal user can not create or delete products
+Normal user can view products "No Index"
+
+Administrators and Accountants can create, delete Modify products
+Administrators and Accountants can create, delete Modify Invoices
+Administrator can create roles and view the list of roles
+
+Accountant can create, modify and delete Invoice
+
+     Invoice detail can be used by all of the user withouth restrictions
+
+
 the complete system can be used following the link:
      https://productmanagementdiegoaestrada20200723220228.azurewebsites.net/
      
