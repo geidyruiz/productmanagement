@@ -3,24 +3,26 @@
 # Geidy Ducuara Ruiz - Student code: 200419082
 # Diego Alejandro Estrada - Student code: 200427046
 
-# Productmanagement allows users to add products to the database, users can create, update, delete invoices-details, and accountant can create modify and also delete any of the invoce details and also te invoice, in other part an admin user can do all the functions included inside the system.
-the first view allows users to create their products and create an order based on the products that they have.
+# Productmanagement allows a comercial agent to receive a call from a customer and add create all the details that customer needs, the following roles explain what an user can a r can not do
 
-Database includes 3 core tables and 6 additional tables that manages all the role functions.
+# Database includes 3 core tables and 6 additional tables that manages all the role functions.
 
-Normal user can not create or delete products
-Normal user can view products "No Index"
+# Salesman  Can see products, details, can not delete products
+#           Can not edit invoice, can see invoice, can not delete invoice.
+#           Can see the invoice details but can not edit or delete invoice details.
 
-Administrators and Accountants can create, delete Modify products
-Administrators and Accountants can create, delete Modify Invoices
-Administrator can create roles and view the list of roles
+# Accountant     Can view, create and edit products
+#                Can view, create and edit Invoices
+#                Can view, create and edit Invoice details
+              
+# Administrator  Can view, Create and Delete Roles
+#                Can view, Create and Delete Products
+#                Can view, Create and Delete Invoice
+#                Can view, Create and Delete Invoice Details
 
-Accountant can create, modify and delete Invoice
-
-     Invoice detail can be used by all of the user withouth restrictions
 
 
-the complete system can be used following the link:
+# the complete system can be used following the link:
      https://productmanagementdiegoaestrada20200723220228.azurewebsites.net/
      
 
