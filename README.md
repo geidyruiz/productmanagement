@@ -19,10 +19,10 @@
         have a unique function that allows the process to (view, create, edit and delete) into products, invoices and also Invoices details.
 
 # Administrator User:
-      Can view, Create and Delete Roles
-      Can view, Create and Delete Products
-      Can view, Create and Delete Invoice
-      Can view, Create and Delete Invoice Details
+      Can view, edit, Create and Delete Roles
+      Can view, edit, Create and Delete Products
+      Can view, edit, Create and Delete Invoice
+      Can view, edit, Create and Delete Invoice Details
 
     
 the complete system can be used following the link:
