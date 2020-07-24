@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,13 +18,13 @@ namespace productmanagement.Controllers
         {
             _context = context;
         }
-
+        
         // GET: Products
         public async Task<IActionResult> Index()
         {
             return View(await _context.Products.ToListAsync());
         }
-
+        
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -43,12 +44,14 @@ namespace productmanagement.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles = "Admin,Accountant")]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Products/Create
+        [Authorize(Roles = "Admin,Accountant")]
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -63,8 +66,9 @@ namespace productmanagement.Controllers
             }
             return View(product);
         }
-
+        
         // GET: Products/Edit/5
+        [Authorize(Roles = "Admin,Accountant")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,8 +83,9 @@ namespace productmanagement.Controllers
             }
             return View(product);
         }
-
+        
         // POST: Products/Edit/5
+        [Authorize(Roles = "Admin,Accountant")]
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,6 +121,7 @@ namespace productmanagement.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Admin,Accountant")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,6 +140,7 @@ namespace productmanagement.Controllers
         }
 
         // POST: Products/Delete/5
+        [Authorize(Roles = "Admin,Accountant")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

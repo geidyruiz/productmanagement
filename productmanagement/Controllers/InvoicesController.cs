@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using productmanagement.Models;
 
 namespace productmanagement.Properties
 {
+  
     public class InvoicesController : Controller
     {
         private readonly ProductContext _context;
@@ -43,6 +45,7 @@ namespace productmanagement.Properties
         }
 
         // GET: Invoices/Create
+        [Authorize(Roles = "Admin,Accountant")]
         public IActionResult Create()
         {
             return View();
@@ -65,6 +68,7 @@ namespace productmanagement.Properties
         }
 
         // GET: Invoices/Edit/5
+        [Authorize(Roles = "Admin,Accountant")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -116,6 +120,7 @@ namespace productmanagement.Properties
         }
 
         // GET: Invoices/Delete/5
+        [Authorize(Roles = "Admin,Accountant")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

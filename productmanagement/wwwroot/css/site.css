@@ -28,6 +28,7 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  background-color:goldenrod;
 }
 @media (min-width: 768px) {
   html {
@@ -62,6 +63,40 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+a:hover {
+    position: relative;
+    display: inline-block;
+    /*font-size: 2em;
+    font-weight: 800;*/
+    color: royalblue;
+    overflow: hidden;
+}
+
+a {
+    /* Same as before */
+    background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+}
+
+a {
+    /* Same as before */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+}
+
+a {
+    /* Same as before */
+    transition: background-position 375ms ease;
+}
+
+
+    a:hover {
+        background-position: 0 100%;
+    }
+
 .footer {
   position: absolute;
   bottom: 0;
