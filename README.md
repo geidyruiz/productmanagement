@@ -1,5 +1,5 @@
 # product management
-https://productmanagementdiegoaestrada20200723220228.azurewebsites.net/
+
 # Developers:
 
     Geidy Ducuara Ruiz - Student code: 200419082
@@ -27,5 +27,4 @@ https://productmanagementdiegoaestrada20200723220228.azurewebsites.net/
     
 the complete system can be used following the link:
  
- https://productmanagementdiegoaestrada20200723220228.azurewebsites.net/
  
