@@ -17,5 +17,6 @@ namespace productmanagement.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Invoice_Detail> Invoice_Details { get; set; }
+
     }
 }
