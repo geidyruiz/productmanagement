@@ -1,0 +1,60 @@
+﻿@model IEnumerable<productmanagement.Models.Invoice>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Invoices</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client_Invoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sub_Total_Invoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Invoice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invoice_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client_Invoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sub_Total_Invoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Invoice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Invoice_Number">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Invoice_Number">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Invoice_Number">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

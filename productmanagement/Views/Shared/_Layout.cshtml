@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Product Management</title>
+    <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-slate.css" />-->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+    <!--<link rel="stylesheet" href="~/css/site.css" />-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <!--<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">productmanagement</a>-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Create</a>
+                                }
+                                <div class="dropdown-menu">
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Administration" asp-action="CreateRole">Role</a>
+                                        }
+                                    }
+
+
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Administration" asp-action="ListRoles">List Roles</a>
+                                        }
+                                    }
+
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        @if (User.IsInRole("Admin") || User.IsInRole("Accountant"))
+                                        {
+
+                                            <a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Create">Products</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Invoices" asp-action="Create">Invoices</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Invoice_Detail" asp-action="Create">Invoice Details</a>
+
+                                        }
+                                    }
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        @if (User.IsInRole("Sales"))
+                                        {
+                                            <a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Invoices" asp-action="Index">Invoices</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Invoice_Detail" asp-action="Index">Invoice Details</a>
+
+                                        }
+                                    }
+                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div style="color: black;text-align: center;" class="container" ;>
+            &copy; 2020 - productmanagement - Geidy Ducuara - Diego Estrada
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
