@@ -28,7 +28,7 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
-  background-color:goldenrod;
+  background-color:antiquewhite;
 }
 @media (min-width: 768px) {
   html {
@@ -55,8 +55,9 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    background-color: #a9bed6;
 }
 
 body {
